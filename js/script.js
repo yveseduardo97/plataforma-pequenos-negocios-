@@ -4,7 +4,7 @@ function mostrarProdutos(lista = produtos) {
     let listaHTML = document.getElementById("lista-produtos");
     listaHTML.innerHTML = "";
 
-    lista.forEach(produto => {
+    lista.forEach((produto, index) => {
         let div = document.createElement("div");
         div.classList.add("card");
 
@@ -12,10 +12,17 @@ function mostrarProdutos(lista = produtos) {
             <h3>${produto.nome}</h3>
             <p>${produto.descricao}</p>
             <p><strong>Contato:</strong> ${produto.contato}</p>
+            <button onclick="excluirProduto(${index})">Excluir</button>
         `;
 
         listaHTML.appendChild(div);
     });
+}
+
+function excluirProduto(index) {
+    produtos.splice(index, 1);
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+    mostrarProdutos();
 }
 
 function filtrarProdutos() {
