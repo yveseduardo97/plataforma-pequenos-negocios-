@@ -1,13 +1,13 @@
 # Plataforma Web para Divulgação de Pequenos Negócios Locais
 
-## 📌 Descrição
+## Descrição
 Este projeto consiste em uma plataforma web desenvolvida com o objetivo de permitir que pequenos empreendedores divulguem seus produtos e serviços de forma simples, rápida e acessível.
 
 A plataforma busca conectar comerciantes locais com clientes da região, facilitando a visibilidade de negócios que muitas vezes não possuem presença digital estruturada.
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 Desenvolver um sistema web simples e funcional que permita:
 - Cadastro de usuários (lojistas)
 - Cadastro de produtos e serviços
@@ -16,11 +16,20 @@ Desenvolver um sistema web simples e funcional que permita:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - HTML5
 - CSS3
 - JavaScript
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
+plataforma-pequenos-negocios/
+│
+├── index.html
+├── README.md
+├── css/
+├── js/
+├── pages/
+├── assets/
+└── data/
