@@ -1,10 +1,10 @@
 let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-function mostrarProdutos() {
-    let lista = document.getElementById("lista-produtos");
-    lista.innerHTML = "";
+function mostrarProdutos(lista = produtos) {
+    let listaHTML = document.getElementById("lista-produtos");
+    listaHTML.innerHTML = "";
 
-    produtos.forEach(produto => {
+    lista.forEach(produto => {
         let div = document.createElement("div");
         div.classList.add("card");
 
@@ -14,8 +14,19 @@ function mostrarProdutos() {
             <p><strong>Contato:</strong> ${produto.contato}</p>
         `;
 
-        lista.appendChild(div);
+        listaHTML.appendChild(div);
     });
+}
+
+function filtrarProdutos() {
+    let busca = document.getElementById("busca").value.toLowerCase();
+
+    let filtrados = produtos.filter(produto =>
+        produto.nome.toLowerCase().includes(busca) ||
+        produto.descricao.toLowerCase().includes(busca)
+    );
+
+    mostrarProdutos(filtrados);
 }
 
 mostrarProdutos();
